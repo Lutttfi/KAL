@@ -1,4 +1,4 @@
-# _3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian_
+# Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian\_
 
 _1. Soal nomer satu diberikan (SPL) tiga variabel dengan soal :_
 
@@ -19,7 +19,7 @@ M1 = matrix(QQ,[[2, 1, -1, 8], [-3, -1, 2, -11], [-2, 1, 2, -3]])
 show(M1)
 ```
 
-# 1. Buat pivot 1 di Baris 0 (R0 = 1/2 \* R0)
+## Buat pivot 1 di Baris 0 (R0 = 1/2 \* R0)
 
 ```python
 import numpy as np
@@ -28,7 +28,7 @@ print ("")
 show (M1)
 ```
 
-# 2. Nolkan kolom 0 di bawah pivot
+## Nolkan kolom 0 di bawah pivot
 
 ```python
 import numpy as np
@@ -38,7 +38,7 @@ M1.add_multiple_of_row(2, 0, 2) # R2 = 2*R0 + R2
 show (M1)
 ```
 
-# 3. Buat pivot 1 di Baris 1 (R1 = 2 \* R1)
+## Buat pivot 1 di Baris 1 (R1 = 2 \* R1)
 
 ```python
 import numpy as np
@@ -46,7 +46,7 @@ M1.rescale_row(1, 2) #
 show (M1)
 ```
 
-# 4. Nolkan kolom 1 di bawah pivot
+## Nolkan kolom 1 di bawah pivot
 
 ```python
 import numpy as np
@@ -54,7 +54,7 @@ M1.add_multiple_of_row(2, 1, -2) # R2 = -2\*R1 + R2
 show (M1)
 ```
 
-# 5. Buat pivot 1 di Baris 2 (R2 = -1 \* R2)
+## Buat pivot 1 di Baris 2 (R2 = -1 \* R2)
 
 ```python
 import numpy as np
@@ -94,7 +94,7 @@ print("Matriks Awal:")
 show(M2)
 ```
 
-# 1. Nolkan kolom 0 di bawah pivot Baris 0
+## Nolkan kolom 0 di bawah pivot Baris 0
 
 ```python
 import numpy as np
@@ -103,7 +103,7 @@ M2.add_multiple_of_row(2, 0, -3)
 M2.add_multiple_of_row(3, 0, -4)
 ```
 
-# 2. Nolkan kolom 1 di bawah pivot Baris 1
+## Nolkan kolom 1 di bawah pivot Baris 1
 
 ```python
 import numpy as np
@@ -111,7 +111,7 @@ M2.add_multiple_of_row(2, 1, 1)
 M2.add_multiple_of_row(3, 1, 3)
 ```
 
-# 3. Buat pivot 1 di Baris 2 dan nolkan di bawahnya
+## Buat pivot 1 di Baris 2 dan nolkan di bawahnya
 
 ```python
 import numpy as np
@@ -119,7 +119,7 @@ M2.rescale_row(2, -1/2)
 M2.add_multiple_of_row(3, 2, 8)
 ```
 
-# 4. Buat pivot 1 di Baris 3
+## Buat pivot 1 di Baris 3
 
 ```python
 import numpy as np
