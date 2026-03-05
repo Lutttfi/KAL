@@ -26,7 +26,9 @@ dari persamaan diatas kita menggunakan tiga operasi dasar garis
 2. add_multiple_of_row(i, j, a) fungsi: menambahkan a x (baris ke-j) ke baris ke-i
 3. swap_rows (i,j) fungsi: menukar baris ke-i dengan baris ke-j
 
-python
+```python
+import numpy as np
+
 A= matrix([[1, -1, 1, 3], [2, 1, 8, 18], [4, 2, -3, -2]])
 #tambahkan -2 kali baris 0 ke baris 1
 A.add_multiple_of_row(0,1,-2)
@@ -34,6 +36,7 @@ A.add_multiple_of_row(0, 2, -4)
 A.add_multiple_of_row(1, 2, -2)
 A.with_rescale_row(1, 1, 0/3)
 A.with_rescale_row(2, 1, 0/-19)
+```
 
 $$
 \begin{bmatrix}
@@ -184,8 +187,11 @@ bentuk himpunan penyelesaiannya (1,0, 2)
 
 ### _contoh penyelesaian sistem persamaan empat variabel_
 
-python
+```python
+import numpy as np
+
 B=Matriks([[1, 1, 1, 1, 10], [2, 1, -1, 1, 5], [1, -1, 2, -1,1], [3, 2, 1, 1, 12]])
+```
 
 $$
 \begin{cases}

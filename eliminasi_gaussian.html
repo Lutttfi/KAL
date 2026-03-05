@@ -424,14 +424,17 @@ x_1 - x_2 + x_3 = 3 \\
 <li><p>add_multiple_of_row(i, j, a) fungsi: menambahkan a x (baris ke-j) ke baris ke-i</p></li>
 <li><p>swap_rows (i,j) fungsi: menukar baris ke-i dengan baris ke-j</p></li>
 </ol>
-<p>python
-A= matrix([[1, -1, 1, 3], [2, 1, 8, 18], [4, 2, -3, -2]])
-#tambahkan -2 kali baris 0 ke baris 1
-A.add_multiple_of_row(0,1,-2)
-A.add_multiple_of_row(0, 2, -4)
-A.add_multiple_of_row(1, 2, -2)
-A.with_rescale_row(1, 1, 0/3)
-A.with_rescale_row(2, 1, 0/-19)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">A</span><span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#tambahkan -2 kali baris 0 ke baris 1</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/-</span><span class="mi">19</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -576,8 +579,11 @@ x_1 &amp;= 1
 </section>
 <section id="contoh-penyelesaian-sistem-persamaan-empat-variabel">
 <h2><em>contoh penyelesaian sistem persamaan empat variabel</em><a class="headerlink" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel" title="Link to this heading">#</a></h2>
-<p>python
-B=Matriks([[1, 1, 1, 1, 10], [2, 1, -1, 1, 5], [1, -1, 2, -1,1], [3, 2, 1, 1, 12]])</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">B</span><span class="o">=</span><span class="n">Matriks</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+</pre></div>
+</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
