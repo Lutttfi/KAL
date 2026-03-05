@@ -1,333 +1,133 @@
-## _Eliminasi Gaussian_
+# _3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian_
 
-Eliminasi Gaussian adalah algoritma untuk mengubah matriks menjadi bentuk eselon baris (REF). Bagian ini melengkapi pembahasan sistem persamaan linear dengan memberikan metode sistematis untuk menyederhanakan dan menyelesaikannya menggunakan matriks dan operasi baris.
-
-Tujuan utama:
-
-1. Mendefinisikan secara tepat apa yang dimaksud sistem yang “lebih sederhana”.
-
-2. Memberikan algoritma yang jelas untuk mencapainya.
-
-3. Menjelaskan bagaimana membaca solusi dari bentuk tersebut.
-
-### _Contoh operasi baris dan eliminasi_
+_1. Soal nomer satu diberikan (SPL) tiga variabel dengan soal :_
 
 $$
 \begin{cases}
-x_1 - x_2 + x_3 = 3 \\
-2x_1 + x_2 + 8x_3 = 18 \\
-4x_1 + 2x_2 - 3x_3 = -2
+2x + y - z = 8 \\
+-3x - y + 2z = -11 \\
+-2x + y + 2z = -3
 \end{cases}
 $$
 
-dari persamaan diatas kita menggunakan tiga operasi dasar garis
-
-1. rescale_row(i,a) fungsi: mengalikan baris ke-i dengan skalar a
-2. add_multiple_of_row(i, j, a) fungsi: menambahkan a x (baris ke-j) ke baris ke-i
-3. swap_rows (i,j) fungsi: menukar baris ke-i dengan baris ke-j
+Tampilan Code nya untuk di tools sage :
 
 ```python
 import numpy as np
 
-A= matrix([[1, -1, 1, 3], [2, 1, 8, 18], [4, 2, -3, -2]])
-#tambahkan -2 kali baris 0 ke baris 1
-A.add_multiple_of_row(0,1,-2)
-A.add_multiple_of_row(0, 2, -4)
-A.add_multiple_of_row(1, 2, -2)
-A.with_rescale_row(1, 1, 0/3)
-A.with_rescale_row(2, 1, 0/-19)
+M1 = matrix(QQ,[[2, 1, -1, 8], [-3, -1, 2, -11], [-2, 1, 2, -3]])
+show(M1)
 ```
 
-$$
-\begin{bmatrix}
-1 & -1 & 1 & 3 \\
-0 & 3 & 6 & 12 \\
-4 & 2 & -3 & -2
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-1 & -1 & 1 & 3 \\
-0 & 3 & 6 & 12 \\
-0 & 6 & -7 & -14
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-1 & -1 & 1 & 3 \\
-0 & 3 & 6 & 12 \\
-0 & 0 & -19 & -38
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-1 & -1 & 1 & 3 \\
-0 & 1 & 2 & 4 \\
-0 & 0 & -19 & -38
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-1 & -1 & 1 & 3 \\
-0 & 1 & 2 & 4 \\
-0 & 0 & 1 & 2
-\end{bmatrix}
-$$
-
-hasil matrix diatas diubah kembali menjadi sistem persamaaan
-
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
-    <mtr>
-      <mtd>
-        <mtable displaystyle="true" columnalign="right center left" columnspacing="0em 0.278em" rowspacing="3pt">
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>1</mn>
-              </msub>
-              <mo>&#x2212;</mo>
-              <msub>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>+</mo>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>3</mn>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>+</mo>
-              <mn>2</mn>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>4</mn>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>2</mn>
-            </mtd>
-          </mtr>
-        </mtable>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
-
-dan dapat ditemukan bahwa:
-
-$$
-\begin{cases}
-x_1 - x_2 + x_3 = 3 \\
-x_2 + 2x_3 = 4 \\
-x_3 = 2
-\end{cases}
-$$
-
-dapat diketahui bahwa X3=2 kita subtitusikan ke persamaan kedua
-
-$$
-x_2 + 2(2) = 4
-$$
-
-$$
-x_2 = 0
-$$
-
-lalu hasil X2 kita subtitusikan ke persamaan pertama
-
-$$
-\begin{aligned}
-x_1 - 0 + 2 &= 3 \\
-x_1 + 2 &= 3 \\
-x_1 &= 3 - 2 \\
-x_1 &= 1
-\end{aligned}
-$$
-
-bentuk himpunan penyelesaiannya (1,0, 2)
-
-### _contoh penyelesaian sistem persamaan empat variabel_
+# 1. Buat pivot 1 di Baris 0 (R0 = 1/2 \* R0)
 
 ```python
 import numpy as np
-
-B=Matriks([[1, 1, 1, 1, 10], [2, 1, -1, 1, 5], [1, -1, 2, -1,1], [3, 2, 1, 1, 12]])
+M1.rescale_row(0, 1/2) #
+print ("")
+show (M1)
 ```
 
-$$
-\begin{cases}
-x_1 + x_2 + x_3 + x_4 = 10 \\
-2x_1 + x_2 - x_3 + x_4 = 5 \\
-x_1 - x_2 + 2x_3 - x_4 = 1 \\
-3x_1 + 2x_2 + x_3 + x_4 = 12
-\end{cases}
-$$
+# 2. Nolkan kolom 0 di bawah pivot
 
-bentuk matrixnya:
+```python
+import numpy as np
+M1.add_multiple_of_row(1, 0, 3) # R1 = 3*R0 + R1
+show (M1)
+M1.add_multiple_of_row(2, 0, 2) # R2 = 2*R0 + R2
+show (M1)
+```
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 10 \\
-2 & 1 & -1 & 1 & 5 \\
-1 & -1 & 2 & -1 & 1 \\
-3 & 2 & 1 & 1 & 12
-\end{bmatrix}
-$$
+# 3. Buat pivot 1 di Baris 1 (R1 = 2 \* R1)
 
-$$
-R_2 \rightarrow R_2 - 2R_1
-$$
+```python
+import numpy as np
+M1.rescale_row(1, 2) #
+show (M1)
+```
 
-$$
-R_3 \rightarrow R_3 - R_1
-$$
+# 4. Nolkan kolom 1 di bawah pivot
 
-$$
-R_4 \rightarrow R_4 - 3R_1
-$$
+```python
+import numpy as np
+M1.add_multiple_of_row(2, 1, -2) # R2 = -2\*R1 + R2
+show (M1)
+```
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 10 \\
-0 & -1 & -3 & -1 & -15 \\
-0 & -2 & 1 & -2 & -9 \\
-0 & -1 & -2 & -2 & -18
-\end{bmatrix}
-$$
+# 5. Buat pivot 1 di Baris 2 (R2 = -1 \* R2)
 
-$$
-R_3 \rightarrow R_3 - 2R_2
-$$
+```python
+import numpy as np
+M1.rescale_row(2, -1) #
 
-$$
-R_4 \rightarrow R_4 - R_2
-$$
+show(M1)
+```
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 10 \\
-0 & -1 & -3 & -1 & -15 \\
-0 & 0 & 7 & 0 & 21 \\
-0 & 0 & 1 & -1 & -3
-\end{bmatrix}
-$$
+_Hasil Run Code 1_
 
-$$
-R_4 \rightarrow R_4 - \frac{1}{7}R_3
-$$
-
-$$
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 10 \\
-0 & -1 & -3 & -1 & -15 \\
-0 & 0 & 7 & 0 & 21 \\
-0 & 0 & 0 & -1 & -6
-\end{bmatrix}
-$$
-
-$$
-R_2 \rightarrow -R_2
-$$
-
-$$
-R_3 \rightarrow \frac{1}{7}R_3
-$$
-
-$$
-R_4 \rightarrow -R_4
-$$
-
-$$
-\begin{bmatrix}
-1 & 1 & 1 & 1 & 10 \\
-0 & 1 & 3 & 1 & 15 \\
-0 & 0 & 1 & 0 & 3 \\
-0 & 0 & 0 & 1 & 6
-\end{bmatrix}
-$$
+![Hasil Soal 2](_static/RunCode.png)
+_2. Soal nomer dua diberikan (SPL) empat variabel dengan soal :_
 
 $$
 \begin{cases}
-x_1 + x_2 + x_3 + x_4 = 10 \\
-x_2 + 3x_3 + x_4 = 15 \\
-x_3 = 3 \\
-x_4 = 6
+w + x + y + z = 10 \\
+2w + 3x + y - z = 7 \\
+3w + 2x + 2y + z = 17 \\
+4w + x - y + 2z = 10
 \end{cases}
 $$
 
-$$
-x_4 = 6
-$$
+Tampilan Code nya untuk di tools sage :
 
-$$
-x_3 = 3
-$$
+# Inisialisasi Matriks 4 Variabel (Gunakan QQ agar tidak error)
 
-subtitusikan ke persamaan kedua
+```python
+import numpy as np
+M2 = matrix(QQ, [
+[1, 1, 1, 1, 10],
+[2, 3, 1, -1, 7],
+[3, 2, 2, 1, 17],
+[4, 1, -1, 2, 10]
+])
 
-$$
-x_2 + 3(3) + 6 = 15
-$$
+print("Matriks Awal:")
+show(M2)
+```
 
-$$
-x_2 + 9 + 6 = 15
-$$
+# 1. Nolkan kolom 0 di bawah pivot Baris 0
 
-$$
-x_2 = 0
-$$
+```python
+import numpy as np
+M2.add_multiple_of_row(1, 0, -2)
+M2.add_multiple_of_row(2, 0, -3)
+M2.add_multiple_of_row(3, 0, -4)
+```
 
-subtitusikan ke persamaan pertama
+# 2. Nolkan kolom 1 di bawah pivot Baris 1
 
-$$
-\begin{aligned}
-x_1 + 0 + 3 + 6 &= 10 \\
-x_1 + 9 &= 10 \\
-x_1 &= 1
-\end{aligned}
-$$
+```python
+import numpy as np
+M2.add_multiple_of_row(2, 1, 1)
+M2.add_multiple_of_row(3, 1, 3)
+```
 
-himpunan penyelesaian:
+# 3. Buat pivot 1 di Baris 2 dan nolkan di bawahnya
 
-$$
-(x_1, x_2, x_3, x_4) = (1,0,3,6)
-$$
+```python
+import numpy as np
+M2.rescale_row(2, -1/2)
+M2.add_multiple_of_row(3, 2, 8)
+```
+
+# 4. Buat pivot 1 di Baris 3
+
+```python
+import numpy as np
+M2.rescale_row(3, -1/6)
+
+print("Matriks Hasil Akhir (Eselon Baris):")
+show(M2)
+```
+
+_Hasil Run Code 2_
+![Hasil Soal 1](_static/RunCode2.png)

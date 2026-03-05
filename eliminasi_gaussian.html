@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eliminasi Gaussian &#8212; My Jupyter Book</title>
+    <title>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian &#8212; My Jupyter Book</title>
   
   
   
@@ -190,7 +190,17 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Eliminasi Gaussian</em></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian</em></a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -376,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eliminasi Gaussian</h1>
+    <h1>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,9 +396,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-operasi-baris-dan-eliminasi"><em>Contoh operasi baris dan eliminasi</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel"><em>contoh penyelesaian sistem persamaan empat variabel</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-0-r0-1-2-r0">1. Buat pivot 1 di Baris 0 (R0 = 1/2 * R0)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-0-di-bawah-pivot">2. Nolkan kolom 0 di bawah pivot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-1-r1-2-r1">3. Buat pivot 1 di Baris 1 (R1 = 2 * R1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-1-di-bawah-pivot">4. Nolkan kolom 1 di bawah pivot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-2-r2-1-r2">5. Buat pivot 1 di Baris 2 (R2 = -1 * R2)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inisialisasi-matriks-4-variabel-gunakan-qq-agar-tidak-error">Inisialisasi Matriks 4 Variabel (Gunakan QQ agar tidak error)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-0-di-bawah-pivot-baris-0">1. Nolkan kolom 0 di bawah pivot Baris 0</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-1-di-bawah-pivot-baris-1">2. Nolkan kolom 1 di bawah pivot Baris 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-2-dan-nolkan-di-bawahnya">3. Buat pivot 1 di Baris 2 dan nolkan di bawahnya</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-3">4. Buat pivot 1 di Baris 3</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -399,327 +419,133 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="eliminasi-gaussian">
-<h1><em>Eliminasi Gaussian</em><a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
-<p>Eliminasi Gaussian adalah algoritma untuk mengubah matriks menjadi bentuk eselon baris (REF). Bagian ini melengkapi pembahasan sistem persamaan linear dengan memberikan metode sistematis untuk menyederhanakan dan menyelesaikannya menggunakan matriks dan operasi baris.</p>
-<p>Tujuan utama:</p>
-<ol class="arabic simple">
-<li><p>Mendefinisikan secara tepat apa yang dimaksud sistem yang “lebih sederhana”.</p></li>
-<li><p>Memberikan algoritma yang jelas untuk mencapainya.</p></li>
-<li><p>Menjelaskan bagaimana membaca solusi dari bentuk tersebut.</p></li>
-</ol>
-<section id="contoh-operasi-baris-dan-eliminasi">
-<h2><em>Contoh operasi baris dan eliminasi</em><a class="headerlink" href="#contoh-operasi-baris-dan-eliminasi" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-spl-tiga-variabel-dan-empat-variabel-menggunakan-eliminasi-geussian">
+<h1><em>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian</em><a class="headerlink" href="#penyelesaian-spl-tiga-variabel-dan-empat-variabel-menggunakan-eliminasi-geussian" title="Link to this heading">#</a></h1>
+<p><em>1. Soal nomer satu diberikan (SPL) tiga variabel dengan soal :</em></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{cases}
-x_1 - x_2 + x_3 = 3 \\
-2x_1 + x_2 + 8x_3 = 18 \\
-4x_1 + 2x_2 - 3x_3 = -2
+2x + y - z = 8 \\
+-3x - y + 2z = -11 \\
+-2x + y + 2z = -3
 \end{cases}
 \end{split}\]</div>
-<p>dari persamaan diatas kita menggunakan tiga operasi dasar garis</p>
-<ol class="arabic simple">
-<li><p>rescale_row(i,a) fungsi: mengalikan baris ke-i dengan skalar a</p></li>
-<li><p>add_multiple_of_row(i, j, a) fungsi: menambahkan a x (baris ke-j) ke baris ke-i</p></li>
-<li><p>swap_rows (i,j) fungsi: menukar baris ke-i dengan baris ke-j</p></li>
-</ol>
+<p>Tampilan Code nya untuk di tools sage :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="n">A</span><span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
-<span class="c1">#tambahkan -2 kali baris 0 ke baris 1</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/-</span><span class="mi">19</span><span class="p">)</span>
+<span class="n">M1</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">QQ</span><span class="p">,[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">show</span><span class="p">(</span><span class="n">M1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 3 &amp; 6 &amp; 12 \\
-4 &amp; 2 &amp; -3 &amp; -2
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 3 &amp; 6 &amp; 12 \\
-0 &amp; 6 &amp; -7 &amp; -14
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 3 &amp; 6 &amp; 12 \\
-0 &amp; 0 &amp; -19 &amp; -38
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 1 &amp; 2 &amp; 4 \\
-0 &amp; 0 &amp; -19 &amp; -38
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 1 &amp; 2 &amp; 4 \\
-0 &amp; 0 &amp; 1 &amp; 2
-\end{bmatrix}
-\end{split}\]</div>
-<p>hasil matrix diatas diubah kembali menjadi sistem persamaaan</p>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
-    <mtr>
-      <mtd>
-        <mtable displaystyle="true" columnalign="right center left" columnspacing="0em 0.278em" rowspacing="3pt">
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>1</mn>
-              </msub>
-              <mo>&#x2212;</mo>
-              <msub>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>+</mo>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>3</mn>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>+</mo>
-              <mn>2</mn>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>4</mn>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <msub>
-                <mi>x</mi>
-                <mn>3</mn>
-              </msub>
-            </mtd>
-            <mtd>
-              <mi></mi>
-              <mo>=</mo>
-            </mtd>
-            <mtd>
-              <mn>2</mn>
-            </mtd>
-          </mtr>
-        </mtable>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
-<p>dan dapat ditemukan bahwa:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-x_1 - x_2 + x_3 = 3 \\
-x_2 + 2x_3 = 4 \\
-x_3 = 2
-\end{cases}
-\end{split}\]</div>
-<p>dapat diketahui bahwa X3=2 kita subtitusikan ke persamaan kedua</p>
-<div class="math notranslate nohighlight">
-\[
-x_2 + 2(2) = 4
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-x_2 = 0
-\]</div>
-<p>lalu hasil X2 kita subtitusikan ke persamaan pertama</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-x_1 - 0 + 2 &amp;= 3 \\
-x_1 + 2 &amp;= 3 \\
-x_1 &amp;= 3 - 2 \\
-x_1 &amp;= 1
-\end{aligned}
-\end{split}\]</div>
-<p>bentuk himpunan penyelesaiannya (1,0, 2)</p>
 </section>
-<section id="contoh-penyelesaian-sistem-persamaan-empat-variabel">
-<h2><em>contoh penyelesaian sistem persamaan empat variabel</em><a class="headerlink" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="buat-pivot-1-di-baris-0-r0-1-2-r0">
+<h1>1. Buat pivot 1 di Baris 0 (R0 = 1/2 * R0)<a class="headerlink" href="#buat-pivot-1-di-baris-0-r0-1-2-r0" title="Link to this heading">#</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="n">B</span><span class="o">=</span><span class="n">Matriks</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">rescale_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">show</span> <span class="p">(</span><span class="n">M1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-x_1 + x_2 + x_3 + x_4 = 10 \\
-2x_1 + x_2 - x_3 + x_4 = 5 \\
-x_1 - x_2 + 2x_3 - x_4 = 1 \\
-3x_1 + 2x_2 + x_3 + x_4 = 12
-\end{cases}
-\end{split}\]</div>
-<p>bentuk matrixnya:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-2 &amp; 1 &amp; -1 &amp; 1 &amp; 5 \\
-1 &amp; -1 &amp; 2 &amp; -1 &amp; 1 \\
-3 &amp; 2 &amp; 1 &amp; 1 &amp; 12
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_2 \rightarrow R_2 - 2R_1
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_3 \rightarrow R_3 - R_1
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_4 \rightarrow R_4 - 3R_1
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
-0 &amp; -2 &amp; 1 &amp; -2 &amp; -9 \\
-0 &amp; -1 &amp; -2 &amp; -2 &amp; -18
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_3 \rightarrow R_3 - 2R_2
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_4 \rightarrow R_4 - R_2
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
-0 &amp; 0 &amp; 7 &amp; 0 &amp; 21 \\
-0 &amp; 0 &amp; 1 &amp; -1 &amp; -3
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_4 \rightarrow R_4 - \frac{1}{7}R_3
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
-0 &amp; 0 &amp; 7 &amp; 0 &amp; 21 \\
-0 &amp; 0 &amp; 0 &amp; -1 &amp; -6
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_2 \rightarrow -R_2
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_3 \rightarrow \frac{1}{7}R_3
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-R_4 \rightarrow -R_4
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
-0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 3 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 6
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-x_1 + x_2 + x_3 + x_4 = 10 \\
-x_2 + 3x_3 + x_4 = 15 \\
-x_3 = 3 \\
-x_4 = 6
-\end{cases}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-x_4 = 6
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-x_3 = 3
-\]</div>
-<p>subtitusikan ke persamaan kedua</p>
-<div class="math notranslate nohighlight">
-\[
-x_2 + 3(3) + 6 = 15
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-x_2 + 9 + 6 = 15
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-x_2 = 0
-\]</div>
-<p>subtitusikan ke persamaan pertama</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-x_1 + 0 + 3 + 6 &amp;= 10 \\
-x_1 + 9 &amp;= 10 \\
-x_1 &amp;= 1
-\end{aligned}
-\end{split}\]</div>
-<p>himpunan penyelesaian:</p>
-<div class="math notranslate nohighlight">
-\[
-(x_1, x_2, x_3, x_4) = (1,0,3,6)
-\]</div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="nolkan-kolom-0-di-bawah-pivot">
+<h1>2. Nolkan kolom 0 di bawah pivot<a class="headerlink" href="#nolkan-kolom-0-di-bawah-pivot" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># R1 = 3*R0 + R1</span>
+<span class="n">show</span> <span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># R2 = 2*R0 + R2</span>
+<span class="n">show</span> <span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="buat-pivot-1-di-baris-1-r1-2-r1">
+<h1>3. Buat pivot 1 di Baris 1 (R1 = 2 * R1)<a class="headerlink" href="#buat-pivot-1-di-baris-1-r1-2-r1" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">rescale_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">show</span> <span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nolkan-kolom-1-di-bawah-pivot">
+<h1>4. Nolkan kolom 1 di bawah pivot<a class="headerlink" href="#nolkan-kolom-1-di-bawah-pivot" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># R2 = -2\*R1 + R2</span>
+<span class="n">show</span> <span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="buat-pivot-1-di-baris-2-r2-1-r2">
+<h1>5. Buat pivot 1 di Baris 2 (R2 = -1 * R2)<a class="headerlink" href="#buat-pivot-1-di-baris-2-r2-1-r2" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">rescale_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Hasil Run Code 1</em></p>
+<p><img alt="Hasil Soal 2" src="_images/RunCode.png" />
+<em>2. Soal nomer dua diberikan (SPL) empat variabel dengan soal :</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+w + x + y + z = 10 \\
+2w + 3x + y - z = 7 \\
+3w + 2x + 2y + z = 17 \\
+4w + x - y + 2z = 10
+\end{cases}
+\end{split}\]</div>
+<p>Tampilan Code nya untuk di tools sage :</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="inisialisasi-matriks-4-variabel-gunakan-qq-agar-tidak-error">
+<h1>Inisialisasi Matriks 4 Variabel (Gunakan QQ agar tidak error)<a class="headerlink" href="#inisialisasi-matriks-4-variabel-gunakan-qq-agar-tidak-error" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="n">QQ</span><span class="p">,</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Awal:&quot;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">M2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nolkan-kolom-0-di-bawah-pivot-baris-0">
+<h1>1. Nolkan kolom 0 di bawah pivot Baris 0<a class="headerlink" href="#nolkan-kolom-0-di-bawah-pivot-baris-0" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nolkan-kolom-1-di-bawah-pivot-baris-1">
+<h1>2. Nolkan kolom 1 di bawah pivot Baris 1<a class="headerlink" href="#nolkan-kolom-1-di-bawah-pivot-baris-1" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="buat-pivot-1-di-baris-2-dan-nolkan-di-bawahnya">
+<h1>3. Buat pivot 1 di Baris 2 dan nolkan di bawahnya<a class="headerlink" href="#buat-pivot-1-di-baris-2-dan-nolkan-di-bawahnya" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">rescale_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="buat-pivot-1-di-baris-3">
+<h1>4. Buat pivot 1 di Baris 3<a class="headerlink" href="#buat-pivot-1-di-baris-3" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">rescale_row</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Hasil Akhir (Eselon Baris):&quot;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">M2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Hasil Run Code 2</em>
+<img alt="Hasil Soal 1" src="_images/RunCode2.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -777,9 +603,19 @@ x_1 &amp;= 1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-operasi-baris-dan-eliminasi"><em>Contoh operasi baris dan eliminasi</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel"><em>contoh penyelesaian sistem persamaan empat variabel</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>3. Penyelesaian (SPL) Tiga Variabel dan Empat Variabel Menggunakan Eliminasi Geussian</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-0-r0-1-2-r0">1. Buat pivot 1 di Baris 0 (R0 = 1/2 * R0)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-0-di-bawah-pivot">2. Nolkan kolom 0 di bawah pivot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-1-r1-2-r1">3. Buat pivot 1 di Baris 1 (R1 = 2 * R1)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-1-di-bawah-pivot">4. Nolkan kolom 1 di bawah pivot</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-2-r2-1-r2">5. Buat pivot 1 di Baris 2 (R2 = -1 * R2)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inisialisasi-matriks-4-variabel-gunakan-qq-agar-tidak-error">Inisialisasi Matriks 4 Variabel (Gunakan QQ agar tidak error)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-0-di-bawah-pivot-baris-0">1. Nolkan kolom 0 di bawah pivot Baris 0</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nolkan-kolom-1-di-bawah-pivot-baris-1">2. Nolkan kolom 1 di bawah pivot Baris 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-2-dan-nolkan-di-bawahnya">3. Buat pivot 1 di Baris 2 dan nolkan di bawahnya</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-pivot-1-di-baris-3">4. Buat pivot 1 di Baris 3</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
