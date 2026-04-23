@@ -8,3 +8,16 @@ parts:
     chapters:
       - file: sistem_persamaan_linier
         title: "Konsep Dasar SPL"
+      - file: eliminasi_gaussian
+        title: "Eliminasi Gaussian (SageMath)"
+      - file: geometri_spl
+        title: "Geometri Sistem Persamaan Linear"
+
+  - caption: Matriks dan Determinan
+    chapters:
+      - file: operasi_baris_elementer
+        title: "OBE & Implementasi Komputasi"
+      - file: matrix_determinan
+        title: "Perhitungan Determinan (Ekspansi Baris)"
+      - file: matrix_invers
+        title: "Invers Matriks & Metode Adjoint"
