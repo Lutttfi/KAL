@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modul Interaktif: Aljabar Linear &amp; Sistem Persamaan Linear &#8212; My sample book</title>
+    <title>Perhitungan Determinan (Metode Ekspansi Baris) &#8212; My sample book</title>
   
   
   
@@ -62,10 +62,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'matrix_determinan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Konsep Dasar Sistem Persamaan Linear (SPL)" href="sistem_persamaan_linier.html" />
+    <link rel="next" title="Invers Matriks &amp; Metode Adjoint" href="matrix_invers.html" />
+    <link rel="prev" title="Penyelesaian SPL dengan Operasi Baris Elementer (OBE)" href="operasi_baris_elementer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +118,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -138,7 +137,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -165,8 +164,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Modul Interaktif: Aljabar Linear & Sistem Persamaan Linear
                 </a>
             </li>
@@ -178,9 +177,9 @@
 <li class="toctree-l1"><a class="reference internal" href="geometri_spl.html">Geometri Sistem Persamaan Linear</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matriks dan Determinan</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="operasi_baris_elementer.html">OBE &amp; Implementasi Komputasi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matrix_determinan.html">Perhitungan Determinan (Ekspansi Baris)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Perhitungan Determinan (Ekspansi Baris)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix_invers.html">Invers Matriks &amp; Metode Adjoint</a></li>
 </ul>
 
@@ -258,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmatrix_determinan.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +287,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/matrix_determinan.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +363,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modul Interaktif: Aljabar Linear & Sistem Persamaan Linear</h1>
+    <h1>Perhitungan Determinan (Metode Ekspansi Baris)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,7 +373,19 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-materi">📚 Struktur Materi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-2-times-2">1. Analisis Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran">Proses Penjabaran:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-3-times-3">2. Analisis Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran-ekspansi-baris-1">Proses Penjabaran (Ekspansi Baris 1):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-4-times-4">3. Analisis Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran-metode-rekursif">Proses Penjabaran (Metode Rekursif):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulasi-akhir">Kalkulasi Akhir:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -386,31 +397,97 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>intro</p>
-<section class="tex2jax_ignore mathjax_ignore" id="modul-interaktif-aljabar-linear-sistem-persamaan-linear">
-<h1>Modul Interaktif: Aljabar Linear &amp; Sistem Persamaan Linear<a class="headerlink" href="#modul-interaktif-aljabar-linear-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
-<p>Selamat datang di platform pembelajaran digital mata kuliah <strong>Aljabar Linear</strong>. Modul ini dirancang khusus untuk mahasiswa Informatika guna memahami fondasi matematika yang digunakan dalam algoritma dan sains data.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="perhitungan-determinan-metode-ekspansi-baris">
+<h1>Perhitungan Determinan (Metode Ekspansi Baris)<a class="headerlink" href="#perhitungan-determinan-metode-ekspansi-baris" title="Link to this heading">#</a></h1>
+<p>Sesuai dengan <strong>Teorema 2.5.9</strong>, determinan matriks dihitung dengan memecah matriks besar menjadi matriks yang lebih kecil (submatriks). Proses ini melibatkan tiga komponen utama: <strong>Elemen Matriks (<span class="math notranslate nohighlight">\(a_{ik}\)</span>)</strong>, <strong>Tanda Kofaktor (<span class="math notranslate nohighlight">\((-1)^{i+k}\)</span>)</strong>, dan <strong>Minor (<span class="math notranslate nohighlight">\(M_{ik}\)</span>)</strong>.</p>
 <hr class="docutils" />
-<section id="struktur-materi">
-<h2>📚 Struktur Materi<a class="headerlink" href="#struktur-materi" title="Link to this heading">#</a></h2>
-<p>Modul ini disusun secara bertahap mulai dari konsep dasar hingga implementasi pemrograman:</p>
+<section id="analisis-matriks-2-times-2">
+<h2>1. Analisis Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span><a class="headerlink" href="#analisis-matriks-2-times-2" title="Link to this heading">#</a></h2>
+<p><strong>Matriks:</strong> <span class="math notranslate nohighlight">\(A = \begin{bmatrix} -7 &amp; -5 \\ 1 &amp; 4 \end{bmatrix}\)</span></p>
+<section id="proses-penjabaran">
+<h3>Proses Penjabaran:<a class="headerlink" href="#proses-penjabaran" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>Konsep Dasar SPL:</strong> Memahami variabel, koefisien, dan representasi matriks.</p></li>
-<li><p><strong>Interpretasi Geometri:</strong> Visualisasi solusi SPL pada bidang Kartesius.</p></li>
-<li><p><strong>Matriks &amp; Invers:</strong> Operasi matriks dan cara mencari matriks kebalikan.</p></li>
-<li><p><strong>Operasi Baris Elementer (OBE):</strong> Metode eliminasi Gauss secara manual.</p></li>
-<li><p><strong>Komputasi dengan Python:</strong> Otomasi penyelesaian SPL menggunakan NumPy.</p></li>
+<li><p><strong>Memilih Baris:</strong> Kita menggunakan Baris 1 (<span class="math notranslate nohighlight">\(i=1\)</span>), yang berisi elemen <span class="math notranslate nohighlight">\(a_{11}=-7\)</span> dan <span class="math notranslate nohighlight">\(a_{12}=-5\)</span>.</p></li>
+<li><p><strong>Menentukan Tanda:</strong> - Elemen <span class="math notranslate nohighlight">\(a_{11}\)</span> berada di posisi <span class="math notranslate nohighlight">\((1,1)\)</span>, maka tandanya <span class="math notranslate nohighlight">\((-1)^{1+1} = +1\)</span>.</p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{12}\)</span> berada di posisi <span class="math notranslate nohighlight">\((1,2)\)</span>, maka tandanya <span class="math notranslate nohighlight">\((-1)^{1+2} = -1\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Mencari Minor:</strong></p>
+<ul class="simple">
+<li><p>Untuk <span class="math notranslate nohighlight">\(M_{11}\)</span>, tutup baris 1 &amp; kolom 1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> sisa angka <strong>4</strong>.</p></li>
+<li><p>Untuk <span class="math notranslate nohighlight">\(M_{12}\)</span>, tutup baris 1 &amp; kolom 2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> sisa angka <strong>1</strong>.</p></li>
+</ul>
+</li>
 </ol>
-<hr class="docutils" />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Website ini mendukung tampilan rumus matematika <span class="math notranslate nohighlight">\(\LaTeX\)</span> dan kode program interaktif. Gunakan menu navigasi di samping untuk berpindah materi.</p>
-</div>
+<p><strong>Kalkulasi:</strong>
+$<span class="math notranslate nohighlight">\(\text{det}(A) = [(+1) \cdot (-7) \cdot (4)] + [(-1) \cdot (-5) \cdot (1)]\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{det}(A) = -28 + 5 = \mathbf{-23}\)</span>$</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
+<hr class="docutils" />
+<section id="analisis-matriks-3-times-3">
+<h2>2. Analisis Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span><a class="headerlink" href="#analisis-matriks-3-times-3" title="Link to this heading">#</a></h2>
+<p><strong>Matriks:</strong> <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 0 &amp; 2 &amp; -3 \\ 1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<section id="proses-penjabaran-ekspansi-baris-1">
+<h3>Proses Penjabaran (Ekspansi Baris 1):<a class="headerlink" href="#proses-penjabaran-ekspansi-baris-1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Suku Pertama (<span class="math notranslate nohighlight">\(k=1\)</span>):</strong></p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{11} = 0\)</span>. Karena elemen pengalinya nol, maka seluruh nilai suku ini adalah <strong>0</strong>, terlepas dari nilai minornya.</p></li>
+</ul>
+</li>
+<li><p><strong>Suku Kedua (<span class="math notranslate nohighlight">\(k=2\)</span>):</strong></p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{12} = 2\)</span>. Tandanya negatif <span class="math notranslate nohighlight">\((-1)^{1+2} = -1\)</span>.</p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{12}\)</span>:</strong> Tutup baris 1 &amp; kolom 2, didapat submatriks <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; -1 \\ 0 &amp; 1 \end{bmatrix}\)</span>.</p></li>
+<li><p>Hitung determinan <span class="math notranslate nohighlight">\(2 \times 2\)</span>: <span class="math notranslate nohighlight">\((1 \cdot 1) - (-1 \cdot 0) = 1\)</span>.</p></li>
+<li><p>Hasil Suku: <span class="math notranslate nohighlight">\((-1) \cdot (2) \cdot (1) = \mathbf{-2}\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Suku Ketiga (<span class="math notranslate nohighlight">\(k=3\)</span>):</strong></p>
+<ul class="simple">
+<li><p>Elemen <span class="math notranslate nohighlight">\(a_{13} = -3\)</span>. Tandanya positif <span class="math notranslate nohighlight">\((-1)^{1+3} = +1\)</span>.</p></li>
+<li><p><strong>Minor <span class="math notranslate nohighlight">\(M_{13}\)</span>:</strong> Tutup baris 1 &amp; kolom 3, didapat submatriks <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; -2 \\ 0 &amp; 0 \end{bmatrix}\)</span>.</p></li>
+<li><p>Hitung determinan <span class="math notranslate nohighlight">\(2 \times 2\)</span>: <span class="math notranslate nohighlight">\((1 \cdot 0) - (-2 \cdot 0) = 0\)</span>.</p></li>
+<li><p>Hasil Suku: <span class="math notranslate nohighlight">\((+1) \cdot (-3) \cdot (0) = \mathbf{0}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Hasil Akhir:</strong>
+$<span class="math notranslate nohighlight">\(\text{det}(A) = 0 + (-2) + 0 = \mathbf{-2}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="analisis-matriks-4-times-4">
+<h2>3. Analisis Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span><a class="headerlink" href="#analisis-matriks-4-times-4" title="Link to this heading">#</a></h2>
+<p><strong>Matriks:</strong> <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; -3 &amp; 1 &amp; 1 \\ -3 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; -3 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; -3 \end{bmatrix}\)</span></p>
+<section id="proses-penjabaran-metode-rekursif">
+<h3>Proses Penjabaran (Metode Rekursif):<a class="headerlink" href="#proses-penjabaran-metode-rekursif" title="Link to this heading">#</a></h3>
+<p>Untuk matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span>, prosesnya lebih panjang karena setiap minornya adalah matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span>.</p>
+<ol class="arabic simple">
+<li><p><strong>Pemecahan Masalah:</strong> Baris 1 mengandung angka <span class="math notranslate nohighlight">\(1, -3, 1, 1\)</span>. Kita harus mencari 4 determinan matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span>.</p></li>
+<li><p><strong>Distribusi Tanda:</strong> Pola tanda baris pertama adalah <span class="math notranslate nohighlight">\((+, -, +, -)\)</span>.</p></li>
+<li><p><strong>Eksekusi Suku:</strong></p>
+<ul class="simple">
+<li><p><strong>Suku 1:</strong> <span class="math notranslate nohighlight">\((+1)(1) \cdot \text{det}(M_{11})\)</span>. Setelah dihitung, <span class="math notranslate nohighlight">\(\text{det}(M_{11}) = 16\)</span>. Maka <span class="math notranslate nohighlight">\(1 \cdot 16 = \mathbf{16}\)</span>.</p></li>
+<li><p><strong>Suku 2:</strong> <span class="math notranslate nohighlight">\((-1)(-3) \cdot \text{det}(M_{12})\)</span>. Setelah dihitung, <span class="math notranslate nohighlight">\(\text{det}(M_{12}) = -16\)</span>. Maka <span class="math notranslate nohighlight">\((3) \cdot (-16) = \mathbf{-48}\)</span>.</p></li>
+<li><p><strong>Suku 3:</strong> <span class="math notranslate nohighlight">\((+1)(1) \cdot \text{det}(M_{13})\)</span>. Setelah dihitung, <span class="math notranslate nohighlight">\(\text{det}(M_{13}) = 16\)</span>. Maka <span class="math notranslate nohighlight">\(1 \cdot 16 = \mathbf{16}\)</span>.</p></li>
+<li><p><strong>Suku 4:</strong> <span class="math notranslate nohighlight">\((-1)(1) \cdot \text{det}(M_{14})\)</span>. Setelah dihitung, <span class="math notranslate nohighlight">\(\text{det}(M_{14}) = -16\)</span>. Maka <span class="math notranslate nohighlight">\((-1) \cdot (-16) = \mathbf{16}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="kalkulasi-akhir">
+<h3>Kalkulasi Akhir:<a class="headerlink" href="#kalkulasi-akhir" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = 16 - 48 + 16 + 16\]</div>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = \mathbf{0}\]</div>
+<p><strong>Interpretasi Hasil:</strong>
+Hasil determinan <strong>0</strong> menunjukkan bahwa matriks ini adalah <strong>matriks singular</strong>. Dalam konteks sistem persamaan linear, ini berarti sistem tersebut tidak memiliki solusi unik atau memiliki solusi tak hingga.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -443,12 +520,21 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="operasi_baris_elementer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Penyelesaian SPL dengan Operasi Baris Elementer (OBE)</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="sistem_persamaan_linier.html"
+       href="matrix_invers.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Konsep Dasar Sistem Persamaan Linear (SPL)</p>
+        <p class="prev-next-title">Invers Matriks &amp; Metode Adjoint</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -470,7 +556,19 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-materi">📚 Struktur Materi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-2-times-2">1. Analisis Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran">Proses Penjabaran:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-3-times-3">2. Analisis Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran-ekspansi-baris-1">Proses Penjabaran (Ekspansi Baris 1):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-matriks-4-times-4">3. Analisis Matriks <span class="math notranslate nohighlight">\(4 \times 4\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-penjabaran-metode-rekursif">Proses Penjabaran (Metode Rekursif):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulasi-akhir">Kalkulasi Akhir:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

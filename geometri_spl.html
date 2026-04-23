@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - My sample book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interpretasi Geometri Sistem Persamaan Linear &#8212; My sample book</title>
   
   
   
@@ -58,12 +60,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'geometri_spl';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Penyelesaian SPL dengan Operasi Baris Elementer (OBE)" href="operasi_baris_elementer.html" />
+    <link rel="prev" title="Eliminasi Gaussian dengan SageMath" href="eliminasi_gaussian.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -85,7 +88,7 @@
   <dialog id="pst-search-dialog">
     
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -114,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -170,10 +171,10 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sistem Persamaan Linier</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sistem_persamaan_linier.html">Konsep Dasar SPL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eliminasi_gaussian.html">Eliminasi Gaussian (SageMath)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geometri_spl.html">Geometri Sistem Persamaan Linear</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geometri Sistem Persamaan Linear</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matriks dan Determinan</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgeometri_spl.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,6 +269,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/geometri_spl.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -301,7 +350,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -310,41 +361,135 @@
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interpretasi Geometri Sistem Persamaan Linear</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-dengan-solusi-tunggal-garis-berpotongan">1. Sistem dengan Solusi Tunggal (Garis Berpotongan)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-tidak-memiliki-solusi-garis-sejajar">2. Sistem Tidak Memiliki Solusi (Garis Sejajar)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-memiliki-tak-hingga-solusi-garis-berimpit">3. Sistem Memiliki Tak Hingga Solusi (Garis Berimpit)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-geometri-spl">Kesimpulan Geometri SPL</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="interpretasi-geometri-sistem-persamaan-linear">
+<h1>Interpretasi Geometri Sistem Persamaan Linear<a class="headerlink" href="#interpretasi-geometri-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<p>Sistem persamaan linear (SPL) dengan dua variabel dapat direpresentasikan secara visual sebagai dua garis lurus pada bidang Kartesius.</p>
+<p>Secara geometri, prinsip dasarnya adalah:</p>
+<ul class="simple">
+<li><p>Setiap persamaan linear membentuk <strong>satu garis lurus</strong>.</p></li>
+<li><p>Solusi dari SPL tersebut adalah <strong>titik perpotongan</strong> dari garis-garis tersebut.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="sistem-dengan-solusi-tunggal-garis-berpotongan">
+<h2>1. Sistem dengan Solusi Tunggal (Garis Berpotongan)<a class="headerlink" href="#sistem-dengan-solusi-tunggal-garis-berpotongan" title="Link to this heading">#</a></h2>
+<p><strong>Contoh Sistem:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x + y = 5 \\
+x - y = 1
+\end{cases}
+\end{split}\]</div>
+<p><strong>Interpretasi:</strong>
+Kedua persamaan membentuk dua garis yang saling berpotongan. Titik potong dari kedua garis inilah yang merupakan solusi dari sistem tersebut. Dengan perhitungan, diperoleh titik potong pada koordinat:</p>
+<div class="math notranslate nohighlight">
+\[(x,y) = (2,1)\]</div>
+<p><strong>Visualisasi GeoGebra:</strong></p>
+<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<blockquote>
+<div><p><strong>Catatan:</strong> Dari grafik terlihat jelas bahwa kedua garis berpotongan tepat di titik (2,1), sehingga sistem ini memiliki <strong>satu solusi</strong>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="sistem-tidak-memiliki-solusi-garis-sejajar">
+<h2>2. Sistem Tidak Memiliki Solusi (Garis Sejajar)<a class="headerlink" href="#sistem-tidak-memiliki-solusi-garis-sejajar" title="Link to this heading">#</a></h2>
+<p><strong>Contoh Sistem:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x + y = 5 \\
+2x + y = 3
+\end{cases}
+\end{split}\]</div>
+<p><strong>Interpretasi:</strong>
+Kedua persamaan memiliki gradien (kemiringan) yang sama, namun nilai konstantanya berbeda. Artinya, kedua garis tersebut sejajar dan tidak akan pernah berpotongan sampai kapan pun. Karena tidak ada titik temu, maka sistem ini <strong>tidak memiliki solusi</strong>.</p>
+<p><strong>Visualisasi GeoGebra:</strong></p>
+<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<blockquote>
+<div><p><strong>Catatan:</strong> Terlihat bahwa kedua garis berjalan sejajar berdampingan, maka dipastikan tidak ada titik potong.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="sistem-memiliki-tak-hingga-solusi-garis-berimpit">
+<h2>3. Sistem Memiliki Tak Hingga Solusi (Garis Berimpit)<a class="headerlink" href="#sistem-memiliki-tak-hingga-solusi-garis-berimpit" title="Link to this heading">#</a></h2>
+<p><strong>Contoh Sistem:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+2x + y = 5 \\
+4x + 2y = 10
+\end{cases}
+\end{split}\]</div>
+<p><strong>Interpretasi:</strong>
+Jika diperhatikan, persamaan kedua pada dasarnya hanyalah kelipatan (dikali dua) dari persamaan pertama. Secara geometri, kedua persamaan ini merepresentasikan garis lurus yang persis sama. Artinya, garis tersebut saling menumpuk atau berimpit, sehingga <strong>setiap titik</strong> di sepanjang garis tersebut adalah solusi. Sistem ini memiliki <strong>tak hingga solusi</strong>.</p>
+<p><strong>Visualisasi GeoGebra:</strong></p>
+<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<blockquote>
+<div><p><strong>Catatan:</strong> Grafik menunjukkan kedua persamaan menghasilkan satu garis yang sama, sehingga semua titik pada garis tersebut memenuhi kedua persamaan.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan-geometri-spl">
+<h2>Kesimpulan Geometri SPL<a class="headerlink" href="#kesimpulan-geometri-spl" title="Link to this heading">#</a></h2>
+<p>Sebagai ringkasan, interpretasi geometri membantu kita memahami hubungan antara perhitungan aljabar dan representasi grafisnya. Sistem persamaan linear dua variabel selalu memiliki satu dari tiga kemungkinan berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Garis Berpotongan</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> Memiliki tepat satu solusi.</p></li>
+<li><p><strong>Garis Sejajar</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> Tidak memiliki solusi sama sekali.</p></li>
+<li><p><strong>Garis Berimpit</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> Memiliki tak hingga solusi.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -353,12 +498,50 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="eliminasi_gaussian.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Eliminasi Gaussian dengan SageMath</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="operasi_baris_elementer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Penyelesaian SPL dengan Operasi Baris Elementer (OBE)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-dengan-solusi-tunggal-garis-berpotongan">1. Sistem dengan Solusi Tunggal (Garis Berpotongan)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-tidak-memiliki-solusi-garis-sejajar">2. Sistem Tidak Memiliki Solusi (Garis Sejajar)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-memiliki-tak-hingga-solusi-garis-berimpit">3. Sistem Memiliki Tak Hingga Solusi (Garis Berimpit)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-geometri-spl">Kesimpulan Geometri SPL</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
