@@ -1,33 +1,35 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: images/logo.jpg
+title: Aljabar Linear Elementer  # Judul di sidebar
+author: Lutfi                   # Nama kamu sebagai penulis
+logo: images/logo.png           # Pastikan file ada di folder images
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Pengaturan Eksekusi Notebook
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache      # Menggunakan cache agar proses build lebih cepat
 
-# Define the name of the latex output file for PDF builds
+# Pengaturan PDF (Opsional)
 latex:
   latex_documents:
-    targetname: book.tex
+    targetname: buku_kal.tex
 
-# Add a bibtex file so that we can create citations
+# File Referensi/Sitasi
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
+# Informasi Repository GitHub
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/Lutttfi/kal  # Link repo kamu
+  path_to_book: .                      # Titik karena file ada di root folder
+  branch: main                         # Sudah disesuaikan ke 'main'
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# Pengaturan Tampilan HTML (Estetika)
 html:
-  use_issues_button: true
-  use_repository_button: true
-  favicon: images/favicon.ico
+  favicon: images/favicon.png          # Ikon di tab browser
+  use_issues_button: true              # Tombol lapor error
+  use_repository_button: true          # Tombol ke repo GitHub
+  use_edit_page_button: false          # Matikan jika tidak ingin orang lain edit
+  home_page_in_toc: true               # Menampilkan 'Intro' di daftar isi
+  navbar_footer_text: "Dibuat dengan ❤️ oleh Lutfi" # Teks di bawah menu
+  announcement: "Selamat datang di Modul Digital Aljabar Linear!" # Pesan di atas web

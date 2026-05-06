@@ -21,3 +21,8 @@ parts:
         title: "Perhitungan Determinan (Ekspansi Baris)"
       - file: matrix_invers
         title: "Invers Matriks & Metode Adjoint"
+
+  - caption: Transformasi Geometri
+    chapters:
+      - file: matriks_transformasi
+        title: "Matriks Transformasi & Visualisasi"
