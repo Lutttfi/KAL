@@ -26,12 +26,7 @@ $$
 **Visualisasi Interaktif:**
 Gunakan grafik di bawah ini untuk melihat bagaimana dua garis bertemu di satu titik.
 
-<iframe src="https://www.geogebra.org/material/iframe/id/tgazqzgd/width/800/height/450/ai/true/asb/true/sbm/false/sbc/false/lp/true/li/true/szl/true" 
-        width="100%" 
-        height="450px" 
-        style="border: 1px solid #e4e4e4; border-radius: 8px;"
-        allowfullscreen>
-</iframe>
+<iframe src="https://www.geogebra.org/classic/?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 <!-- <iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe> -->
 
