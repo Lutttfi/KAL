@@ -26,7 +26,7 @@ $$
 **Visualisasi Interaktif:**
 Gunakan grafik di bawah ini untuk melihat bagaimana dua garis bertemu di satu titik.
 
-<iframe src="https://www.geogebra.org/classic/qyaq2gtd?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/qyaq2gtd?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 
@@ -48,7 +48,7 @@ $$
 **Visualisasi Interaktif:**
 Perhatikan bahwa kedua garis di bawah ini selalu menjaga jarak yang sama dan tidak pernah berpotongan.
 
-<iframe src="https://www.geogebra.org/classic/fyq9rrju?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/fyq9rrju?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 
@@ -70,7 +70,7 @@ $$
 **Visualisasi Interaktif:**
 Pada grafik di bawah, hanya terlihat satu garis karena garis kedua menumpuk tepat di atas garis pertama.
 
-<iframe src="https://www.geogebra.org/classic/wyjc7gm3?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/wyjc7gm3?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 
