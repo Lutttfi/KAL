@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Aljabar Linear Elementer</title>
+    <title>Matriks Transformasi Geometri &#8212; Aljabar Linear Elementer</title>
   
   
   
@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'matriks_transformasi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -175,6 +177,10 @@
 <li class="toctree-l1"><a class="reference internal" href="operasi_baris_elementer.html">OBE &amp; Implementasi Komputasi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix_determinan.html">Perhitungan Determinan (Ekspansi Baris)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matrix_invers.html">Invers Matriks &amp; Metode Adjoint</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Transformasi Geometri</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Matriks Transformasi &amp; Visualisasi</a></li>
 </ul>
 
     </div>
@@ -357,7 +363,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Matriks Transformasi Geometri</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,9 +372,11 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-matriks-transformasi-dasar">1. Jenis-Jenis Matriks Transformasi Dasar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-interaktif-geogebra">2. Visualisasi Interaktif GeoGebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-python">3. Implementasi dengan Python</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -379,7 +387,81 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="matriks-transformasi-geometri">
+<h1>Matriks Transformasi Geometri<a class="headerlink" href="#matriks-transformasi-geometri" title="Link to this heading">#</a></h1>
+<p>Transformasi linear adalah pemetaan yang memindahkan titik-titik pada bidang koordinat menggunakan operasi perkalian matriks. Dalam sistem koordinat 2D, sebuah titik atau vektor <span class="math notranslate nohighlight">\(\vec{v} = (x, y)\)</span> diubah menjadi titik baru <span class="math notranslate nohighlight">\(\vec{v'} = (x', y')\)</span> melalui perkalian dengan matriks transformasi <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+\end{split}\]</div>
+<section id="jenis-jenis-matriks-transformasi-dasar">
+<h2>1. Jenis-Jenis Matriks Transformasi Dasar<a class="headerlink" href="#jenis-jenis-matriks-transformasi-dasar" title="Link to this heading">#</a></h2>
+<p>Berikut adalah daftar matriks standar yang digunakan untuk berbagai jenis transformasi geometri:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Jenis Transformasi</p></th>
+<th class="head text-center"><p>Matriks Standar (<span class="math notranslate nohighlight">\(A\)</span>)</p></th>
+<th class="head text-left"><p>Deskripsi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Scaling</strong> (Skala)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\begin{bmatrix} s_x &amp; 0 \\ 0 &amp; s_y \end{bmatrix}\)</span></p></td>
+<td class="text-left"><p>Mengubah ukuran objek berdasarkan faktor <span class="math notranslate nohighlight">\(s_x\)</span> dan <span class="math notranslate nohighlight">\(s_y\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Rotation</strong> (Rotasi)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}\)</span></p></td>
+<td class="text-left"><p>Memutar objek sebesar sudut <span class="math notranslate nohighlight">\(\theta\)</span> terhadap titik asal.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Shearing</strong> (Geseran)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; k \\ 0 &amp; 1 \end{bmatrix}\)</span></p></td>
+<td class="text-left"><p>Menarik objek ke arah samping (kemiringan).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Reflection</strong> (Refleksi)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}\)</span></p></td>
+<td class="text-left"><p>Mencerminkan objek terhadap sumbu X.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="visualisasi-interaktif-geogebra">
+<h2>2. Visualisasi Interaktif GeoGebra<a class="headerlink" href="#visualisasi-interaktif-geogebra" title="Link to this heading">#</a></h2>
+<p>Gunakan alat interaktif di bawah ini untuk melihat bagaimana matriks transformasi mengubah bentuk objek secara langsung. Kamu bisa menggeser titik-titik yang ada untuk melihat perubahan koordinatnya.</p>
+<iframe src="https://www.geogebra.org/material/iframe/id/vze78f8v/width/800/height/500/ai/false/sc/false/sbm/false/sbc/false/lp/false/li/false" 
+        width="100%" 
+        height="500px" 
+        style="border: 1px solid #e4e4e4; border-radius: 8px;">
+</iframe>
+</section>
+<hr class="docutils" />
+<section id="implementasi-dengan-python">
+<h2>3. Implementasi dengan Python<a class="headerlink" href="#implementasi-dengan-python" title="Link to this heading">#</a></h2>
+<p>Berikut adalah contoh cara menghitung hasil rotasi titik menggunakan pustaka <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Contoh Kasus</p>
+<p>Hitunglah bayangan titik <span class="math notranslate nohighlight">\(A(2, 3)\)</span> setelah dirotasi <span class="math notranslate nohighlight">\(90^\circ\)</span> berlawanan arah jarum jam!</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 1. Definisi koordinat titik A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># 2. Membuat Matriks Rotasi 90 derajat</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+
+<span class="c1"># 3. Hitung hasil transformasi (A&#39; = R . A)</span>
+<span class="n">A_aksen</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil Rotasi Titik A adalah: </span><span class="si">{</span><span class="n">A_aksen</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -436,9 +518,11 @@
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-matriks-transformasi-dasar">1. Jenis-Jenis Matriks Transformasi Dasar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-interaktif-geogebra">2. Visualisasi Interaktif GeoGebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-python">3. Implementasi dengan Python</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
