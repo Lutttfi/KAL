@@ -32,7 +32,7 @@ $$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} a & b \\ c & d \end{b
 
 Gunakan simulasi di bawah ini untuk melihat bagaimana perubahan nilai pada elemen matriks mempengaruhi vektor unit di bidang Cartesian secara *real-time*.
 
-<iframe src="https://www.geogebra.org/classic/?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/qyaq2gtd?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 ---
 
