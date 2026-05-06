@@ -27,7 +27,7 @@ $$(x,y) = (2,1)$$
 
 **Visualisasi GeoGebra:**
 
-<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/tgazqzgd?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 > **Catatan:** Dari grafik terlihat jelas bahwa kedua garis berpotongan tepat di titik (2,1), sehingga sistem ini memiliki **satu solusi**.
 
@@ -49,7 +49,7 @@ Kedua persamaan memiliki gradien (kemiringan) yang sama, namun nilai konstantany
 
 **Visualisasi GeoGebra:**
 
-<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/fyq9rrju?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 > **Catatan:** Terlihat bahwa kedua garis berjalan sejajar berdampingan, maka dipastikan tidak ada titik potong.
 
@@ -71,7 +71,7 @@ Jika diperhatikan, persamaan kedua pada dasarnya hanyalah kelipatan (dikali dua)
 
 **Visualisasi GeoGebra:**
 
-<iframe src="[https://www.geogebra.org/classic/wg6qk4hx?embed](https://www.geogebra.org/classic/wg6qk4hx?embed)" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+<iframe src="https://www.geogebra.org/classic/wyjc7gm3?embed" width="600" height="400" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
 > **Catatan:** Grafik menunjukkan kedua persamaan menghasilkan satu garis yang sama, sehingga semua titik pada garis tersebut memenuhi kedua persamaan.
 
