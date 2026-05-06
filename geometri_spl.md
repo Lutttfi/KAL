@@ -26,7 +26,7 @@ $$
 **Visualisasi Interaktif:**
 Gunakan grafik di bawah ini untuk melihat bagaimana dua garis bertemu di satu titik.
 
-<iframe src="https://www.geogebra.org/material/iframe/id/tgazqzgd/width/800/height/450/ai/false/sc/false/sbm/false/sbc/false/lp/false/li/false" 
+<iframe src="https://www.geogebra.org/material/iframe/id/tgazqzgd/width/800/height/450/ai/true/sc/true/sbm/true/sbc/true/lp/true/li/true" 
         width="100%" 
         height="450px" 
         style="border: 1px solid #e4e4e4; border-radius: 8px;">
@@ -52,7 +52,7 @@ $$
 **Visualisasi Interaktif:**
 Perhatikan bahwa kedua garis di bawah ini selalu menjaga jarak yang sama dan tidak pernah berpotongan.
 
-<iframe src="https://www.geogebra.org/material/iframe/id/fyq9rrju/width/800/height/450/ai/false/sc/false/sbm/false/sbc/false/lp/false/li/false" 
+<iframe src="https://www.geogebra.org/material/iframe/id/fyq9rrju/width/800/height/450/ai/true/sc/true/sbm/true/sbc/true/lp/true/li/true" 
         width="100%" 
         height="450px" 
         style="border: 1px solid #e4e4e4; border-radius: 8px;">
@@ -78,7 +78,7 @@ $$
 **Visualisasi Interaktif:**
 Pada grafik di bawah, hanya terlihat satu garis karena garis kedua menumpuk tepat di atas garis pertama.
 
-<iframe src="https://www.geogebra.org/material/iframe/id/wyjc7gm3/width/800/height/450/ai/false/sc/false/sbm/false/sbc/false/lp/false/li/false" 
+<iframe src="https://www.geogebra.org/material/iframe/id/wyjc7gm3/width/800/height/450/ai/true/sc/true/sbm/true/sbc/true/lp/true/li/true" 
         width="100%" 
         height="450px" 
         style="border: 1px solid #e4e4e4; border-radius: 8px;">
