@@ -95,3 +95,33 @@ v_prime = R @ v
 
 print(f"Vektor awal: {v}")
 print(f"Vektor hasil transformasi: {v_prime}")
+
+# Tutorial Membuat Animasi Refleksi Matematika
+
+Berikut adalah kode Python menggunakan Matplotlib untuk membuat kotak yang bergerak naik turun, beserta bayangannya di cermin:
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import numpy as np
+
+# Inisialisasi Figure
+fig, ax = plt.subplots(figsize=(6, 8))
+
+# Titik koordinat persegi ABCD
+x_obj = np.array([2, 2, 3, 3, 2])
+y_obj_base = np.array([3, 4, 4, 3, 3])
+
+# Cermin DIAM di sumbu X (y = 0)
+mirror_y = 0
+
+# ... (tulis sisa kodenya di sini) ...
+```
+
+Dan ini adalah hasil output animasinya:
+
+<!-- Kalau kamu pakai format GIF -->
+![Hasil Animasi Refleksi](/path/ke/folder/animasi_refleksi.gif)
+
+<!-- ATAU, kalau kamu pakai format HTML Widget Interaktif -->
+<iframe src="/path/ke/folder/animasi_widget.html" width="100%" height="650" frameborder="0"></iframe>
