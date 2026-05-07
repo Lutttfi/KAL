@@ -121,7 +121,4 @@ mirror_y = 0
 Dan ini adalah hasil output animasinya:
 
 <!-- Kalau kamu pakai format GIF -->
-<!-- ![Hasil Animasi Refleksi](/path/ke/folder/animasi_refleksi.gif) -->
-
-<!-- ATAU, kalau kamu pakai format HTML Widget Interaktif -->
-<iframe src="_build/html/animasi_refleksi.html" width="100%" height="650" frameborder="0"></iframe>
+![Animasi Refleksi](./animasi_refleksi.gif)
